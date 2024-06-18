@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/fullpage.js/dist/fullpage.min.css">
+    <script src="https://unpkg.com/fullpage.js/dist/fullpage.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>School Library Web App</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid p-md-2">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto me-1" id="menu">
+                    <li class="nav-item" data-menuanchor="firstPage">
+                        <a class="nav-link pe-4" href="#firstPage"><i class="fa-solid fa-house pe-2"></i>Home</a>
+                    </li>
+                    <li class="nav-item" data-menuanchor="secondPage">
+                        <a class="nav-link pe-4" href="#secondPage"><i class="fa-solid fa-chart-column pe-2"></i>Statistics</a>
+                    </li>
+                    <li class="nav-item" data-menuanchor="thirdPage">
+                        <a class="nav-link pe-4" href="#thirdPage"><i class="fa-solid fa-table pe-2"></i>Inventory</a>
+                    </li>
+                </ul>    
+            </div>
+        </div>
+    </nav>
+    <div class="rect rectangle-1">Republic<br>Polytechnic<br>Library</div>
+    <div class="rect rectangle-2"></div>
+
+    <div id="fullpage">
+
+        <!-- Homepage -->
+        <div class="section homepage" id="#firstPage">
+
+            <h4 class="search-header m-3">What would you like to find?</h4>
+            <div class="searchBar d-flex">
+                <input type="text" class="search-bar me-2" placeholder="Search for a book title">
+                <a class="search-text"><i class="fa-solid fa-magnifying-glass pe-2"></i>Search</a>
+            </div>
+
+            <ul class="project-filter">
+                <li class="list project-filter-active" data-filter="favs">Our Favourite Books</li>
+                <li class="list" data-filter="trending">Trending</li>
+                <li class="list" data-filter="classics">Classics</li>
+            </ul>
+
+            <div class="card-container ps-5 pe-5">
+                <div class="row favb">
+                    <div class="col-md-3">
+                        <div class="card fav">
+                            <img src="images/hp.jpg" class="card-img-top" alt="Harry Potter">
+                            <div class="card-body">
+                                <h5 class="card-title">Harry Potter and the Sorcerer's Stone</h5>
+                                <p class="card-text"><i class="fa-solid fa-user pe-2"></i>J.K. Rowling</p>
+                                <a class="reserve" onclick="reserveBook(this)">Reserve</a>
+                                <i class="fa-solid fa-circle-info information" onclick="showSVG()"></i>
+                            </div>
+                            <div class="svg-container" id="svgContainer">
+                                <?xml version="1.0" encoding="UTF-8"?>
+                                <p class="svg-text">"Harry Potter and the Sorcerer's Stone" introduces us to the magical world of Hogwarts as Harry discovers his wizarding abilities. Alongside his friends Ron and Hermione, Harry faces challenges, unravels mysteries, and embraces his destiny as the Boy Who Lived. J.K. Rowling's enchanting tale is a timeless adventure of friendship and courage against the backdrop of a richly imagined wizarding universe.</p>
+                                <i class="fa-regular fa-circle-xmark escape" onclick="closeSVG()"></i>
+                                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 639.75 457.46">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: #e6e6e6;
+                                    }
+
+                                    .cls-1, .cls-2 {
+                                        stroke-width: 0px;
+                                    }
+
+                                    .cls-2 {
+                                        fill: #fff;
+                                    }
+                                    </style>
+                                </defs>
+                                <rect class="cls-1" y="74.95" width="319.87" height="382.26"/>
+                                <path class="cls-2" d="M319.87,457.21c-22.18-19.85-58.57-46.99-108.28-62.25-84.81-26.02-155.84-1.3-184.83,10.98.23-130.42.47-260.84.7-391.26,34.33-10.92,108.28-28.2,193.47,3.14,42.85,15.76,75.7,39.1,98.33,58.58.21,126.93.41,253.87.62,380.8Z"/>
+                                <rect class="cls-1" x="319.87" y="75.19" width="319.87" height="382.26" transform="translate(959.62 532.65) rotate(180)"/>
+                                <path class="cls-2" d="M319.87,457.46c22.18-19.85,58.57-46.99,108.28-62.25,84.81-26.02,155.84-1.3,184.83,10.98-.23-130.42-.47-260.84-.7-391.26-34.33-10.92-108.28-28.2-193.47,3.14-42.85,15.76-75.7,39.1-98.33,58.58-.21,126.93-.41,253.87-.62,380.8Z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card fav">
+                            <img src="images/tgg.jpg" class="card-img-top" alt="The Great Gatsby">
+                            <div class="card-body">
+                                <h5 class="card-title">The Great<br>Gatsby</h5>
+                                <p class="card-text"><i class="fa-solid fa-user pe-2"></i>F. Scott Fitzgerald</p>
+                                <a class="reserve" onclick="reserveBook(this)">Reserve</a>
+                                <i class="fa-solid fa-circle-info information" onclick="showSVG1()"></i>
+                            </div>
+                            <div class="svg-container" id="svgContainer1">
+                                <?xml version="1.0" encoding="UTF-8"?>
+                                <p class="svg-text">"The Great Gatsby," F. Scott Fitzgerald's third book, is considered the pinnacle of his career. This iconic novel, set in the Jazz Age, tells the tale of the wealthy Jay Gatsby and his love for the beautiful Daisy Buchanan. Amidst lavish parties on Long Island during a time when "gin was the national drink and sex the national obsession," the story unfolds as an exquisitely crafted portrayal of America in the 1920s.</p>
+                                <i class="fa-regular fa-circle-xmark escape" onclick="closeSVG1()"></i>
+                                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 639.75 457.46">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: #e6e6e6;
+                                    }
+
+                                    .cls-1, .cls-2 {
+                                        stroke-width: 0px;
+                                    }
+
+                                    .cls-2 {
+                                        fill: #fff;
+                                    }
+                                    </style>
+                                </defs>
+                                <rect class="cls-1" y="74.95" width="319.87" height="382.26"/>
+                                <path class="cls-2" d="M319.87,457.21c-22.18-19.85-58.57-46.99-108.28-62.25-84.81-26.02-155.84-1.3-184.83,10.98.23-130.42.47-260.84.7-391.26,34.33-10.92,108.28-28.2,193.47,3.14,42.85,15.76,75.7,39.1,98.33,58.58.21,126.93.41,253.87.62,380.8Z"/>
+                                <rect class="cls-1" x="319.87" y="75.19" width="319.87" height="382.26" transform="translate(959.62 532.65) rotate(180)"/>
+                                <path class="cls-2" d="M319.87,457.46c22.18-19.85,58.57-46.99,108.28-62.25,84.81-26.02,155.84-1.3,184.83,10.98-.23-130.42-.47-260.84-.7-391.26-34.33-10.92-108.28-28.2-193.47,3.14-42.85,15.76-75.7,39.1-98.33,58.58-.21,126.93-.41,253.87-.62,380.8Z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card fav">
+                            <img src="images/tfios.jpg" class="card-img-top" alt="The Fault in Our Stars">
+                            <div class="card-body">
+                                <h5 class="card-title">The Fault<br>in Our Stars</h5>
+                                <p class="card-text"><i class="fa-solid fa-user pe-2"></i>John Green</p>
+                                <a class="reserve" onclick="reserveBook(this)">Reserve</a>
+                                <i class="fa-solid fa-circle-info information" onclick="showSVG2()"></i>
+                            </div>
+                            <div class="svg-container" id="svgContainer2">
+                                <?xml version="1.0" encoding="UTF-8"?>
+                                <p class="svg-text">Hazel, a terminal patient with a tumor-shrinking miracle, encounters Augustus Waters at a Cancer Support Group. In "The Fault in Our Stars" by John Green, their unexpected connection rewrites Hazel's story. This raw exploration of life and love stands as Green's most ambitious work, delivering insights into the tragic and thrilling aspects of existence.</p>
+                                <i class="fa-regular fa-circle-xmark escape" onclick="closeSVG2()"></i>
+                                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 639.75 457.46">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: #e6e6e6;
+                                    }
+
+                                    .cls-1, .cls-2 {
+                                        stroke-width: 0px;
+                                    }
+
+                                    .cls-2 {
+                                        fill: #fff;
+                                    }
+                                    </style>
+                                </defs>
+                                <rect class="cls-1" y="74.95" width="319.87" height="382.26"/>
+                                <path class="cls-2" d="M319.87,457.21c-22.18-19.85-58.57-46.99-108.28-62.25-84.81-26.02-155.84-1.3-184.83,10.98.23-130.42.47-260.84.7-391.26,34.33-10.92,108.28-28.2,193.47,3.14,42.85,15.76,75.7,39.1,98.33,58.58.21,126.93.41,253.87.62,380.8Z"/>
+                                <rect class="cls-1" x="319.87" y="75.19" width="319.87" height="382.26" transform="translate(959.62 532.65) rotate(180)"/>
+                                <path class="cls-2" d="M319.87,457.46c22.18-19.85,58.57-46.99,108.28-62.25,84.81-26.02,155.84-1.3,184.83,10.98-.23-130.42-.47-260.84-.7-391.26-34.33-10.92-108.28-28.2-193.47,3.14-42.85,15.76-75.7,39.1-98.33,58.58-.21,126.93-.41,253.87-.62,380.8Z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card fav">
+                            <img src="images/aiw.jpg" class="card-img-top" alt="Alice's Adventures in Wonderland">
+                            <div class="card-body">
+                                <h5 class="card-title">Alice's Adventures in Wonderland</h5>
+                                <p class="card-text"><i class="fa-solid fa-user pe-2"></i>Lewis Carroll</p>
+                                <a class="reserve" onclick="reserveBook(this)">Reserve</a>
+                                <i class="fa-solid fa-circle-info information" onclick="showSVG3()"></i>
+                            </div>
+                            <div class="svg-container" id="svgContainer3">
+                                <?xml version="1.0" encoding="UTF-8"?>
+                                <p class="svg-text">Lewis Carroll's iconic "Alice in Wonderland" conceals the lesser-known origin story of "Alice's Adventures Under Ground." Created as a gift for Alice Liddell, this manuscript, sold among collectors, now resides in the British Museum since 1948. In this edition, the 130-year-old manuscript is faithfully reproduced in color, offering a rare glimpse into Carroll's enduring world and the genesis of this timeless children's story.</p>
+                                <i class="fa-regular fa-circle-xmark escape" onclick="closeSVG3()"></i>
+                                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 639.75 457.46">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: #e6e6e6;
+                                    }
+
+                                    .cls-1, .cls-2 {
+                                        stroke-width: 0px;
+                                    }
+
+                                    .cls-2 {
+                                        fill: #fff;
+                                    }
+                                    </style>
+                                </defs>
+                                <rect class="cls-1" y="74.95" width="319.87" height="382.26"/>
+                                <path class="cls-2" d="M319.87,457.21c-22.18-19.85-58.57-46.99-108.28-62.25-84.81-26.02-155.84-1.3-184.83,10.98.23-130.42.47-260.84.7-391.26,34.33-10.92,108.28-28.2,193.47,3.14,42.85,15.76,75.7,39.1,98.33,58.58.21,126.93.41,253.87.62,380.8Z"/>
+                                <rect class="cls-1" x="319.87" y="75.19" width="319.87" height="382.26" transform="translate(959.62 532.65) rotate(180)"/>
+                                <path class="cls-2" d="M319.87,457.46c22.18-19.85,58.57-46.99,108.28-62.25,84.81-26.02,155.84-1.3,184.83,10.98-.23-130.42-.47-260.84-.7-391.26-34.33-10.92-108.28-28.2-193.47,3.14-42.85,15.76-75.7,39.1-98.33,58.58-.21,126.93-.41,253.87-.62,380.8Z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card trending">
+                            <img src="images/iewu.jpg" class="card-img-top" alt="It Ends with Us">
+                            <div class="card-body">
+                                <h5 class="card-title">It Ends with Us</h5>
+                                <p class="card-text"><i class="fa-solid fa-user pe-2"></i>Colleen Hoover</p>
+                                <br>
+                                <a class="reserve" onclick="reserveBook(this)">Reserve</a>
+                                <i class="fa-solid fa-circle-info information" onclick="showSVG4()"></i>
+                            </div>
+                            <div class="svg-container" id="svgContainer4">
+                                <?xml version="1.0" encoding="UTF-8"?>
+                                <p class="svg-text">Lily, a resilient woman from Maine, finds unexpected love with neurosurgeon Ryle Kincaid in Boston. Despite Ryle's assertiveness and aversion to relationships, Lily becomes the exception. However, questions about Ryle's past arise, and Lily's thoughts turn to her first love, Atlas Corrigan, endangering the life she's built. The complexities of love and past connections intertwine in this gripping tale.</p>
+                                <i class="fa-regular fa-circle-xmark escape" onclick="closeSVG4()"></i>
+                                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 639.75 457.46">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: #e6e6e6;
+                                    }
+
+                                    .cls-1, .cls-2 {
+                                        stroke-width: 0px;
+                                    }
+
+                                    .cls-2 {
+                                        fill: #fff;
+                                    }
+                                    </style>
+                                </defs>
+                                <rect class="cls-1" y="74.95" width="319.87" height="382.26"/>
+                                <path class="cls-2" d="M319.87,457.21c-22.18-19.85-58.57-46.99-108.28-62.25-84.81-26.02-155.84-1.3-184.83,10.98.23-130.42.47-260.84.7-391.26,34.33-10.92,108.28-28.2,193.47,3.14,42.85,15.76,75.7,39.1,98.33,58.58.21,126.93.41,253.87.62,380.8Z"/>
+                                <rect class="cls-1" x="319.87" y="75.19" width="319.87" height="382.26" transform="translate(959.62 532.65) rotate(180)"/>
+                                <path class="cls-2" d="M319.87,457.46c22.18-19.85,58.57-46.99,108.28-62.25,84.81-26.02,155.84-1.3,184.83,10.98-.23-130.42-.47-260.84-.7-391.26-34.33-10.92-108.28-28.2-193.47,3.14-42.85,15.76-75.7,39.1-98.33,58.58-.21,126.93-.41,253.87-.62,380.8Z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card trending">
+                            <img src="images/ah.jpg" class="card-img-top" alt="Atomic Habits">
+                            <div class="card-body">
+                                <h5 class="card-title">Atomic Habits</h5>
+                                <p class="card-text"><i class="fa-solid fa-user pe-2"></i>James Clear</p>
+                                <br>
+                                <a class="reserve" onclick="reserveBook(this)">Reserve</a>
+                                <i class="fa-solid fa-circle-info information" onclick="showSVG5()"></i>
+                            </div>
+                            <div class="svg-container" id="svgContainer5">
+                                <?xml version="1.0" encoding="UTF-8"?>
+                                <p class="svg-text">"Atomic Habits" by James Clear provides a proven framework for daily improvement, offering practical strategies to form good habits and break bad ones. As a leading expert on habit formation, Clear transforms the way readers think about progress and success, providing essential tools for personal or collective goals, from quitting smoking to winning championships.</p>
+                                <i class="fa-regular fa-circle-xmark escape" onclick="closeSVG5()"></i>
+                                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 639.75 457.46">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: #e6e6e6;
+                                    }
+
+                                    .cls-1, .cls-2 {
+                                        stroke-width: 0px;
+                                    }
+
+                                    .cls-2 {
+                                        fill: #fff;
+                                    }
+                                    </style>
+                                </defs>
+                                <rect class="cls-1" y="74.95" width="319.87" height="382.26"/>
+                                <path class="cls-2" d="M319.87,457.21c-22.18-19.85-58.57-46.99-108.28-62.25-84.81-26.02-155.84-1.3-184.83,10.98.23-130.42.47-260.84.7-391.26,34.33-10.92,108.28-28.2,193.47,3.14,42.85,15.76,75.7,39.1,98.33,58.58.21,126.93.41,253.87.62,380.8Z"/>
+                                <rect class="cls-1" x="319.87" y="75.19" width="319.87" height="382.26" transform="translate(959.62 532.65) rotate(180)"/>
+                                <path class="cls-2" d="M319.87,457.46c22.18-19.85,58.57-46.99,108.28-62.25,84.81-26.02,155.84-1.3,184.83,10.98-.23-130.42-.47-260.84-.7-391.26-34.33-10.92-108.28-28.2-193.47,3.14-42.85,15.76-75.7,39.1-98.33,58.58-.21,126.93-.41,253.87-.62,380.8Z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card trending">
+                            <img src="images/thg.jpg" class="card-img-top" alt="The Hunger Games">
+                            <div class="card-body">
+                                <h5 class="card-title">The Hunger Games</h5>
+                                <p class="card-text"><i class="fa-solid fa-user pe-2"></i>Suzanne Collins</p>
+                                <br>
+                                <a class="reserve" onclick="reserveBook(this)">Reserve</a>
+                                <i class="fa-solid fa-circle-info information" onclick="showSVG6()"></i>
+                            </div>
+                            <div class="svg-container" id="svgContainer6">
+                                <?xml version="1.0" encoding="UTF-8"?>
+                                <p class="svg-text">In the dystopian Panem, the Capitol governs through the annual Hunger Games, forcing each district to send a boy and girl for a televised fight to the death. Katniss Everdeen, a sixteen-year-old, volunteers to protect her sister, thrusting her into a deadly contest where survival demands choices that test her humanity and understanding of love.</p>
+                                <i class="fa-regular fa-circle-xmark escape" onclick="closeSVG6()"></i>
+                                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 639.75 457.46">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: #e6e6e6;
+                                    }
+
+                                    .cls-1, .cls-2 {
+                                        stroke-width: 0px;
+                                    }
+
+                                    .cls-2 {
+                                        fill: #fff;
+                                    }
+                                    </style>
+                                </defs>
+                                <rect class="cls-1" y="74.95" width="319.87" height="382.26"/>
+                                <path class="cls-2" d="M319.87,457.21c-22.18-19.85-58.57-46.99-108.28-62.25-84.81-26.02-155.84-1.3-184.83,10.98.23-130.42.47-260.84.7-391.26,34.33-10.92,108.28-28.2,193.47,3.14,42.85,15.76,75.7,39.1,98.33,58.58.21,126.93.41,253.87.62,380.8Z"/>
+                                <rect class="cls-1" x="319.87" y="75.19" width="319.87" height="382.26" transform="translate(959.62 532.65) rotate(180)"/>
+                                <path class="cls-2" d="M319.87,457.46c22.18-19.85,58.57-46.99,108.28-62.25,84.81-26.02,155.84-1.3,184.83,10.98-.23-130.42-.47-260.84-.7-391.26-34.33-10.92-108.28-28.2-193.47,3.14-42.85,15.76-75.7,39.1-98.33,58.58-.21,126.93-.41,253.87-.62,380.8Z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card trending">
+                            <img src="images/taow.jpg" class="card-img-top" alt="The Art of War">
+                            <div class="card-body">
+                                <h5 class="card-title">The Art of War</h5>
+                                <p class="card-text"><i class="fa-solid fa-user pe-2"></i>Sun Tzu</p>
+                                <br>
+                                <a class="reserve" onclick="reserveBook(this)">Reserve</a>
+                                <i class="fa-solid fa-circle-info information" onclick="showSVG7()"></i>
+                            </div>
+                            <div class="svg-container" id="svgContainer7">
+                                <?xml version="1.0" encoding="UTF-8"?>
+                                <p class="svg-text">Sun Tzu's classic, "The Art of War," penned 2,500 years ago, remains a cornerstone of military strategy rooted in Chinese warfare principles. Embraced by diverse fields, including politics and business, its teachings transcend the battlefield. In today's context, the book serves as a guide for gaining advantages both in the boardroom and on the battlefield, offering timeless wisdom applicable to various aspects of life.</p>
+                                <i class="fa-regular fa-circle-xmark escape" onclick="closeSVG7()"></i>
+                                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 639.75 457.46">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: #e6e6e6;
+                                    }
+
+                                    .cls-1, .cls-2 {
+                                        stroke-width: 0px;
+                                    }
+
+                                    .cls-2 {
+                                        fill: #fff;
+                                    }
+                                    </style>
+                                </defs>
+                                <rect class="cls-1" y="74.95" width="319.87" height="382.26"/>
+                                <path class="cls-2" d="M319.87,457.21c-22.18-19.85-58.57-46.99-108.28-62.25-84.81-26.02-155.84-1.3-184.83,10.98.23-130.42.47-260.84.7-391.26,34.33-10.92,108.28-28.2,193.47,3.14,42.85,15.76,75.7,39.1,98.33,58.58.21,126.93.41,253.87.62,380.8Z"/>
+                                <rect class="cls-1" x="319.87" y="75.19" width="319.87" height="382.26" transform="translate(959.62 532.65) rotate(180)"/>
+                                <path class="cls-2" d="M319.87,457.46c22.18-19.85,58.57-46.99,108.28-62.25,84.81-26.02,155.84-1.3,184.83,10.98-.23-130.42-.47-260.84-.7-391.26-34.33-10.92-108.28-28.2-193.47,3.14-42.85,15.76-75.7,39.1-98.33,58.58-.21,126.93-.41,253.87-.62,380.8Z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card classics">
+                            <img src="images/je.jpg" class="card-img-top" alt="Jane Eyre">
+                            <div class="card-body">
+                                <h5 class="card-title">Jane Eyre</h5>
+                                <p class="card-text"><i class="fa-solid fa-user pe-2"></i>Charlotte Brontë</p>
+                                <br>
+                                <a class="reserve" onclick="reserveBook(this)">Reserve</a>
+                                <i class="fa-solid fa-circle-info information" onclick="showSVG8()"></i>
+                            </div>
+                            <div class="svg-container" id="svgContainer8">
+                                <?xml version="1.0" encoding="UTF-8"?>
+                                <p class="svg-text">Orphaned Jane Eyre, resilient and independent, becomes a governess at Thornfield Hall for the brooding Mr. Rochester. As their feelings grow, Jane discovers a dark secret, forcing a choice between staying with Rochester and facing consequences or following her convictions, potentially parting from her love. Brontë's intense and intriguing novel, "Jane Eyre," vividly depicts a woman's pursuit of equality and freedom.</p>
+                                <i class="fa-regular fa-circle-xmark escape" onclick="closeSVG8()"></i>
+                                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 639.75 457.46">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: #e6e6e6;
+                                    }
+
+                                    .cls-1, .cls-2 {
+                                        stroke-width: 0px;
+                                    }
+
+                                    .cls-2 {
+                                        fill: #fff;
+                                    }
+                                    </style>
+                                </defs>
+                                <rect class="cls-1" y="74.95" width="319.87" height="382.26"/>
+                                <path class="cls-2" d="M319.87,457.21c-22.18-19.85-58.57-46.99-108.28-62.25-84.81-26.02-155.84-1.3-184.83,10.98.23-130.42.47-260.84.7-391.26,34.33-10.92,108.28-28.2,193.47,3.14,42.85,15.76,75.7,39.1,98.33,58.58.21,126.93.41,253.87.62,380.8Z"/>
+                                <rect class="cls-1" x="319.87" y="75.19" width="319.87" height="382.26" transform="translate(959.62 532.65) rotate(180)"/>
+                                <path class="cls-2" d="M319.87,457.46c22.18-19.85,58.57-46.99,108.28-62.25,84.81-26.02,155.84-1.3,184.83,10.98-.23-130.42-.47-260.84-.7-391.26-34.33-10.92-108.28-28.2-193.47,3.14-42.85,15.76-75.7,39.1-98.33,58.58-.21,126.93-.41,253.87-.62,380.8Z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card classics">
+                            <img src="images/lw.jpg" class="card-img-top" alt="Little Women">
+                            <div class="card-body">
+                                <h5 class="card-title">Little Women</h5>
+                                <p class="card-text"><i class="fa-solid fa-user pe-2"></i>Louisa May Alcott</p>
+                                <br>
+                                <a class="reserve" onclick="reserveBook(this)">Reserve</a>
+                                <i class="fa-solid fa-circle-info information" onclick="showSVG9()"></i>
+                            </div>
+                            <div class="svg-container" id="svgContainer9">
+                                <?xml version="1.0" encoding="UTF-8"?>
+                                <p class="svg-text">Louisa May Alcott's classic, Little Women, follows the lives of the March sisters—talented Jo, fragile Beth, beautiful Meg, and romantic Amy—as they navigate challenges during the Civil War in New England. Based on Alcott's experiences, the novel explores timeless themes such as love, death, war, personal ambition, and cultural clashes between Europe and America, defying its initial perception as a mere "girl's book."</p>
+                                <i class="fa-regular fa-circle-xmark escape" onclick="closeSVG9()"></i>
+                                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 639.75 457.46">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: #e6e6e6;
+                                    }
+
+                                    .cls-1, .cls-2 {
+                                        stroke-width: 0px;
+                                    }
+
+                                    .cls-2 {
+                                        fill: #fff;
+                                    }
+                                    </style>
+                                </defs>
+                                <rect class="cls-1" y="74.95" width="319.87" height="382.26"/>
+                                <path class="cls-2" d="M319.87,457.21c-22.18-19.85-58.57-46.99-108.28-62.25-84.81-26.02-155.84-1.3-184.83,10.98.23-130.42.47-260.84.7-391.26,34.33-10.92,108.28-28.2,193.47,3.14,42.85,15.76,75.7,39.1,98.33,58.58.21,126.93.41,253.87.62,380.8Z"/>
+                                <rect class="cls-1" x="319.87" y="75.19" width="319.87" height="382.26" transform="translate(959.62 532.65) rotate(180)"/>
+                                <path class="cls-2" d="M319.87,457.46c22.18-19.85,58.57-46.99,108.28-62.25,84.81-26.02,155.84-1.3,184.83,10.98-.23-130.42-.47-260.84-.7-391.26-34.33-10.92-108.28-28.2-193.47,3.14-42.85,15.76-75.7,39.1-98.33,58.58-.21,126.93-.41,253.87-.62,380.8Z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card classics">
+                            <img src="images/pp.jpg" class="card-img-top" alt="Pride & Prejudice">
+                            <div class="card-body">
+                                <h5 class="card-title">Pride & Prejudice</h5>
+                                <p class="card-text"><i class="fa-solid fa-user pe-2"></i>Jane Austen</p>
+                                <br>
+                                <a class="reserve" onclick="reserveBook(this)">Reserve</a>
+                                <i class="fa-solid fa-circle-info information" onclick="showSVG10()"></i>
+                            </div>
+                            <div class="svg-container" id="svgContainer10">
+                                <?xml version="1.0" encoding="UTF-8"?>
+                                <p class="svg-text">
+                                    In Jane Austen's "Pride and Prejudice," Elizabeth Bennet learns the impact of quick judgments and the distinction between surface-level and genuine virtue. Mr. Bennet's financial challenges, with his estate's entailed nature, prompt the daughters to seek advantageous marriages for family support, driving the plot.</p>
+                                <i class="fa-regular fa-circle-xmark escape" onclick="closeSVG10()"></i>
+                                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 639.75 457.46">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: #e6e6e6;
+                                    }
+
+                                    .cls-1, .cls-2 {
+                                        stroke-width: 0px;
+                                    }
+
+                                    .cls-2 {
+                                        fill: #fff;
+                                    }
+                                    </style>
+                                </defs>
+                                <rect class="cls-1" y="74.95" width="319.87" height="382.26"/>
+                                <path class="cls-2" d="M319.87,457.21c-22.18-19.85-58.57-46.99-108.28-62.25-84.81-26.02-155.84-1.3-184.83,10.98.23-130.42.47-260.84.7-391.26,34.33-10.92,108.28-28.2,193.47,3.14,42.85,15.76,75.7,39.1,98.33,58.58.21,126.93.41,253.87.62,380.8Z"/>
+                                <rect class="cls-1" x="319.87" y="75.19" width="319.87" height="382.26" transform="translate(959.62 532.65) rotate(180)"/>
+                                <path class="cls-2" d="M319.87,457.46c22.18-19.85,58.57-46.99,108.28-62.25,84.81-26.02,155.84-1.3,184.83,10.98-.23-130.42-.47-260.84-.7-391.26-34.33-10.92-108.28-28.2-193.47,3.14-42.85,15.76-75.7,39.1-98.33,58.58-.21,126.93-.41,253.87-.62,380.8Z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card classics">
+                            <img src="images/lm.jpg" class="card-img-top" alt="Les Misérables">
+                            <div class="card-body">
+                                <h5 class="card-title">Les Misérables</h5>
+                                <p class="card-text"><i class="fa-solid fa-user pe-2"></i>Victor Hugo</p>
+                                <br>
+                                <a class="reserve" onclick="reserveBook(this)">Reserve</a>
+                                <i class="fa-solid fa-circle-info information" onclick="showSVG11()"></i>
+                            </div>
+                            <div class="svg-container" id="svgContainer11">
+                                <?xml version="1.0" encoding="UTF-8"?>
+                                <p class="svg-text">
+                                    Victor Hugo's "Les Misérables" tells the story of Jean Valjean, an ex-convict striving for redemption. Despite his efforts to leave his criminal past, he faces challenges from his conscience and the relentless Inspector Javert. A case of mistaken identity complicates matters, but Valjean is determined to protect the daughter of Fantine, a woman driven to desperation by poverty.</p>
+                                <i class="fa-regular fa-circle-xmark escape" onclick="closeSVG11()"></i>
+                                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 639.75 457.46">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: #e6e6e6;
+                                    }
+
+                                    .cls-1, .cls-2 {
+                                        stroke-width: 0px;
+                                    }
+
+                                    .cls-2 {
+                                        fill: #fff;
+                                    }
+                                    </style>
+                                </defs>
+                                <rect class="cls-1" y="74.95" width="319.87" height="382.26"/>
+                                <path class="cls-2" d="M319.87,457.21c-22.18-19.85-58.57-46.99-108.28-62.25-84.81-26.02-155.84-1.3-184.83,10.98.23-130.42.47-260.84.7-391.26,34.33-10.92,108.28-28.2,193.47,3.14,42.85,15.76,75.7,39.1,98.33,58.58.21,126.93.41,253.87.62,380.8Z"/>
+                                <rect class="cls-1" x="319.87" y="75.19" width="319.87" height="382.26" transform="translate(959.62 532.65) rotate(180)"/>
+                                <path class="cls-2" d="M319.87,457.46c22.18-19.85,58.57-46.99,108.28-62.25,84.81-26.02,155.84-1.3,184.83,10.98-.23-130.42-.47-260.84-.7-391.26-34.33-10.92-108.28-28.2-193.47,3.14-42.85,15.76-75.7,39.1-98.33,58.58-.21,126.93-.41,253.87-.62,380.8Z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="section statistics" id="#secondPage">
+            <h3 class="stats-header">Library Statistics</h3>
+            <br>
+            <div class="row stats">
+                <div class="col-md-6 left-container">
+                    <div class="row student-count ms-5">
+                        <div class="students-icon col-md-4 mt-4">
+                            <i class="fa-solid fa-person fa-4x"></i>
+                            <i class="fa-solid fa-person fa-4x"></i>
+                            <i class="fa-solid fa-person fa-4x"></i>
+                            <i class="fa-solid fa-person fa-4x"></i>
+                        </div>
+                        <div class="students-served col-md-8">
+                            <h4>STUDENTS SERVED</h4>
+                            <p>453,600+</p>
+                        </div>
+                    </div>
+                    <div class="row book-count ms-5">
+                        <div class="books-checked-out col-md-4">
+                            <p>187,437</p>
+                            <h4>BOOKS<br>CHECKED OUT</h4>
+                        </div>
+                        <div class="book-icon col-md-8 mt-3">
+                            <i class="fa-solid fa-book fa-6x"></i>
+                        </div>
+                    </div>
+                    <div class="row rating ms-5">
+                        <div class="col-md-4 pie-chart">
+                            <canvas id="myChart2"></canvas>
+                        </div>
+                        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                        <div class="col-md-8 mt-2 satisfaction">
+                            <p>9.1/10</p>
+                            <h4>OVERALL<br>SATISFACTION</h4>
+                        </div> 
+                    </div>
+                </div>
+                <div class="col-md-6 mt-5">
+                    <h4 class="ms-5">Our Top Genres</h4>
+                    <div class="genre-chart">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inventory -->
+        <div class="section inventory p-md-5" id="#thirdPage">
+            <h3 class="inventory-header">Book Inventory</h3>
+            <br>
+            <table id="inv-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Genre</th>
+                        <th>Year</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pride & Prejudice</td>
+                        <td>Jane Austen</td>
+                        <td>Romance</td>
+                        <td>1813</td>
+                        <td>Hardcover</td>
+                    </tr>
+                    <tr>
+                        <td>Les Misérables</td>
+                        <td>Victor Hugo</td>
+                        <td>Historical Fiction</td>
+                        <td>1862</td>
+                        <td>Hardcover</td>
+                    </tr>
+                    <tr>
+                        <td>Alice's Advemtures in Wonderland</td>
+                        <td>Lewis Carroll</td>
+                        <td>Fantasy</td>
+                        <td>1865</td>
+                        <td>Paperback</td>
+                    </tr>
+                    <tr>
+                        <td>The Great Gatsby</td>
+                        <td>F. Scott Fitzgerald</td>
+                        <td>Historical Fiction</td>
+                        <td>1925</td>
+                        <td>Hardcover</td>
+                    </tr>
+                    <tr>
+                        <td>Great Expectations</td>
+                        <td>Charles Dickens</td>
+                        <td>Historical Fiction</td>
+                        <td>1861</td>
+                        <td>Hardcover</td>
+                    </tr>
+                    <tr>
+                        <td>Harry Potter and the Sorcerer's Stone</td>
+                        <td>J.K. Rowling</td>
+                        <td>Fantasy</td>
+                        <td>1997</td>
+                        <td>Hardcover</td>
+                    </tr>
+                    <tr>
+                        <td>The Art of War</td>
+                        <td>Sun Tzu</td>
+                        <td>Historical Fiction</td>
+                        <td>5th Century BC</td>
+                        <td>Paperback</td> 
+                    </tr>
+                    <tr>
+                        <td>No Longer Human</td>
+                        <td>Osamu Dazai</td>
+                        <td>Autobiography</td>
+                        <td>1948</td>
+                        <td>Paperback</td>
+                    </tr>
+                    <tr>
+                        <td>It Ends with Us</td>
+                        <td>Colleen Hoover</td>
+                        <td>Romance</td>
+                        <td>2016</td>
+                        <td>Paperback</td>
+                    </tr>
+                    <tr>
+                        <td>Atomic Habits</td>
+                        <td>James Clear</td>
+                        <td>Self-help</td>
+                        <td>2018</td>
+                        <td>Paperback</td>
+                    </tr>
+                    <tr>
+                        <td>Jane Eyre</td>
+                        <td>Charlotte Brontë</td>
+                        <td>Romance</td>
+                        <td>1847</td>
+                        <td>Hardcover</td>
+                    </tr>
+                    <tr>
+                        <td>Little Women</td>
+                        <td>Louisa May Alcott</td>
+                        <td>Historical Fiction</td>
+                        <td>1868</td>
+                        <td>Hardcover</td>
+                    </tr>
+                    <tr>
+                        <td>The Hunger Games</td>
+                        <td>Suzanne Collins</td>
+                        <td>Science Fiction</td>
+                        <td>2008</td>
+                        <td>eBook</td>
+                    </tr>
+                    <tr>
+                        <td>The Fault in Our Stars</td>
+                        <td>John Green</td>
+                        <td>Romance</td>
+                        <td>2012</td>
+                        <td>eBook</td>
+                    </tr>
+                    <tr>
+                        <td>The Adventures of Sherlock Holmes</td>
+                        <td>Sir Arthur Conan Doyle</td>
+                        <td>Mystery</td>
+                        <td>1892</td>
+                        <td>Hardcover</td>
+                    </tr>
+                </tbody>
+            </table>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+        </div>
+        <div class="footer-container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                <div class="col-md-4 d-flex align-items-center">
+                  <span class="mb-3 mb-md-0 text-body-secondary"><small>&copy; C219 GA - Elvina. All Rights Reserved.</small></span>
+                </div>
+            
+                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                  <li class="ms-3"><small>Home</small></li>
+                  <li class="ms-3"><small>Statistics</small></li>
+                  <li class="ms-3"><small>Inventory</small></li>
+                </ul>
+            </footer>
+        </div>
+    </div>
+
+    <script src="anime.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

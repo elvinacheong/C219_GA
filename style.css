@@ -1,0 +1,262 @@
+@font-face {
+    font-family: Gilgan;
+    src: url(Gilgan.otf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Gilgan;
+}
+
+.navbar {
+    background-color: #AEC8AD;
+    display: flex;
+    z-index: 10;
+    position: relative;
+}
+
+.rect {
+    width: 230px;
+    height: 130px;
+}
+
+.rectangle-1 {
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    padding: 7px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 20;
+}
+
+.rectangle-2 {
+    background-color: #DEEEDD;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    z-index: 15;
+}
+
+.search-header {
+    text-align: center;
+    top: 0px;
+}
+
+.searchBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage input[type=text] {
+    width: 500px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 13px;
+    background-color: white;
+    padding: 12px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+.search-text {
+    width: 95px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #0D6EFD;
+    font-size: 13px;
+    background-color: white;
+    padding: 12px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.search-text:hover{
+    background-color: #AEC8AD;
+    color: white;
+    border: 1px solid white;
+} 
+
+.stats-header {
+    text-align: center;
+    top: 0px;
+}
+
+.inventory-header {
+    text-align: center;
+    top: 0px;
+}
+
+#inv-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#inv-table th, #inv-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+#inv-table thead {
+    background-color: #DEEEDD;
+}
+
+#inv-table tbody tr:nth-child(even) {
+    background-color: #F5F5F5;
+}
+
+#inv-table tbody tr:nth-child(odd) {
+    background-color: #FFFFFF;
+}
+
+.genre-chart {
+    margin-right: 50px;
+    height: 390px;
+}
+
+.pie-chart {
+    height: 130px;
+}
+
+.students-served h4, .books-checked-out h4, .satisfaction h4 {
+    color: #AEC8AD;
+    margin-bottom: 5px;
+}
+
+.students-served p, .books-checked-out p, .satisfaction p {
+    font-size: 45px;
+    margin-bottom: 5px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 50px 0px 50px;
+    padding: 20px;
+}
+
+.students-icon, .book-icon {
+    display: flex;
+    gap: 5px; /* Adjusted gap */
+}
+
+.project-filter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.project-filter li{
+    margin: 5px;
+    padding: 3px 10px;
+    color: black;
+    font-size: 15px;
+    letter-spacing: .5px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.project-filter-active{
+    background-color: #DEEEDD;
+    color: white;
+    border-radius: 5px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.card img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card {
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 70px;
+}
+
+.card-title {
+    font-size: 20px;
+}
+
+.card-text {
+    font-size: 15px;
+}
+
+.reserve {
+    background-color: #AEC8AD;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.reserve:hover {
+    background-color: #d3d3d3;
+    color: black;
+}
+
+.information {
+    position: absolute;
+    cursor: pointer;
+    margin-left: 140px;
+}
+
+.svg-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+}
+
+.svg-container svg {
+    display: block;
+    margin: auto;
+    margin-top: 120px;
+    width: 500px;
+    height: auto;
+}
+
+.escape {
+    position: absolute;
+    top: 120px;
+    right: 400px;
+    margin: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.svg-text {
+    position: absolute;
+    text-align: center;
+    top: 220px;
+    left: 35%;
+    right: 35%;
+    font-size: 14px;
+    cursor: pointer;
+}
+
